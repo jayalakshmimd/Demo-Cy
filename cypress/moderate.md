@@ -20,7 +20,7 @@ eg:-
  ### 4.How can I perform dragNdrop in Cypress?
  A)Using plugins
     i)Install--->npm install --save-dev cypress-drag-drop
-    ii)Import import 'cypress-drag-drop';
+    ii)Import---> import 'cypress-drag-drop';
     iii)Interact
 describe('Drag and Drop with Plugin', () => {
   it('should drag and drop using the plugin', () => {

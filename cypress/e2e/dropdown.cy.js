@@ -24,3 +24,8 @@ describe("letcode website",()=>{
         })
     })
 })
+/*cy.get('select')
+.select(['456', '457'])
+.invoke('val')
+.should('deep.equal', ['456', '457'])
+*/

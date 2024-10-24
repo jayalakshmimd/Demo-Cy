@@ -43,7 +43,7 @@ let arrj = ['Hello', 'world'];
 let joined = arrj.join(' ');  // "Hello world"
 //C.flat:- Flattens nested arrays into a single array.
 let arrf = [1, [2, 3], [4, [5, 6]]];
-let flatArr = arrf.flat(2);  // [1, 2, 3, 4, 5, 6]
+let flatArr = arrf.flat(2);  // [1, 2, 3, 4, 5, 6](2 level nesting)
 //D.includes:-Checks if an array contains a specific element.
 let arri = [1, 2, 3];
 arri.includes(2);  // true

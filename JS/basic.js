@@ -154,3 +154,19 @@ function flatterning(arrf)
 }
 }
 console.log(final)  
+//13.Fibnocii number
+function fibonacci(n) {
+  const sequence = [0, 1];
+  for (let i = 2; i < n; i++) {
+      sequence.push(sequence[i - 1] + sequence[i - 2]);
+  }
+  return sequence.slice(0, n);
+}
+console.log(fibonacci(6))//[ 0, 1, 1, 2, 3, 5 ]
+//Factorial
+function factorial(n) {
+  if (n < 0) return undefined; // Factorial is not defined for negative numbers
+  if (n === 0 || n === 1) return 1;
+  return n * factorial(n - 1);
+}
+console.log(factorial(6))//6*5*4*3*2*1=720
