@@ -3,6 +3,7 @@ describe("Scenaio 1-->add item",()=>{
     cy.visit("https://demowebshop.tricentis.com/")
     })
     it("Select item book",()=>{
+      //cy.screenshot()
     cy.get('a[href="/books"]').last().click()
     cy.get(' div:nth-child(1) > div > div.details > div.add-info > div.buttons > input').click()
     cy.get('a[href="/cart"]').first().trigger("mouseover")
@@ -10,6 +11,7 @@ describe("Scenaio 1-->add item",()=>{
     cy.get("div.product > div.price > span").within((text)=>{
         cy.log(text.text())
     })
+   // cy.screenshot('clicking-on-nav')
       //cy.get(`[name="checkout"]`).click()
     })
     })

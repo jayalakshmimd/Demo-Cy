@@ -51,7 +51,7 @@ const cloned = structuredClone(original);
 let emp = {};
 emp.name= 'Jack';
 emp.age= '27'
-for (let [key, value] of Object.entries(emp)) {
+for (let [key, value] of Object.entries(emp)) {//destructuring key and value
     console.log(key + '- ' + value);
 }
 //11.for...in
@@ -70,6 +70,13 @@ entries.forEach(([key, value]) => {
   console.log(`${key}: ${value}`);
 });
 
-
+// const person = {
+//   name: 'Alice',
+//   age: 30,
+//   greet() {
+//     console.log(`Hello, my name is ${this.name}`);
+//   }
+// };
+// person.greet()
 
 

@@ -3,7 +3,7 @@
 npm i --save-dev cypress-mochawesome-reporter
 2.Add below line in cypress.config.js
 reporter: 'cypress-mochawesome-reporter',
-require('cypress-mochawesome-reporter/register/plugin')(on);
+require('cypress-mochawesome-reporter/plugin')(on);
 3.add below line incypress/support/e2e.js
 import 'cypress-mochawesome-reporter/register';
 4.Execute test

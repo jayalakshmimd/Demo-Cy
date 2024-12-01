@@ -99,3 +99,17 @@ console.log(groupedAnagrams);
 //[ [ 'eat', 'tea', 'ate' ], [ 'tan', 'nat' ], [ 'bat' ] ]
 
 
+//7.nested obj word count
+let str1="I am software engineer"
+let input1=str1.split(" ")
+let output={}
+input1.map((i)=>{
+   output[i]={}
+    i.split("").map((innerEle)=>{
+        if(!output[i][innerEle])
+        output[i][innerEle]=1
+        else
+        output[i][innerEle]=output[i][innerEle]+1
+    })
+})
+console.log(output)

@@ -10,7 +10,7 @@ describe('Tutorialspoint Test', function () {
    });
 });
 ### 2.How to access shadow DOM in Cypress?
-Shadow DOM is a web standard that allows developers to create isolated components with their own CSS and JavaScript
+The Shadow DOM is a browser feature that allows developers to encapsulate a portion of the DOM (Document Object Model) and style it separately from the rest of the document.
 cy.get("shadow-signup-form").shadow().find('input[name="password"]').type("lambdatest@123");
 ### 3.What is the trigger function in Cypress?How can I use mouseover in Cypress?
 The trigger() method enables you to programmatically fire events on elements. This is particularly useful for testing scenarios where standard Cypress commands like click() or type() might not be sufficient, such as when testing custom event listeners, animations, or interactions that rely on specific event properties.
@@ -215,6 +215,32 @@ type on search,click on select a ele
 use to override an existing built-in Cypress command or reserved internal function. Caution: this overrides it for Cypress as well and could impact how Cypress behaves.
 cypress/support/commands.js
 Cypress.Commands.overwrite('visit', (orig, url, options) => {})
+### 17.url pattern matching-www.login/jaya/details/1234
+cy.url().should("include", '/details').then(($url: string) => {
+  let jobId = $url.match(/\w+$/); // Match the last word in the URL
+  jobId = jobId.toString(); // Convert jobId array to string==>"1234"
+})
+### 18.a variety of exceptions or errors 
+1.cy.click() failed because this element is not visible 
+  cy.get('.submit-button').should('be.visible').click();
+2.Uncaught Error: Cannot read property 'something' of undefined  
+cy.get('.some-element').then((el) => {
+  if (el) {
+    // Safely access properties
+    console.log(el.text());
+  }
+});
+3.Timed out after waiting for 4000ms: expected to find element
+cy.get('.my-element', { timeout: 10000 }).should('be.visible');
+4.cy.type() failed because the input is disabled
+cy.get('.my-input').should('not.be.disabled').type('Some text');
+5.cy.visit() failed because the page could not be loaded
+cy.visit('https://example.com');  // Check URL
+6.cy.contains() failed because the element was not found
+cy.contains('Submit').click();  // Ensure "Submit" text is available
+7.Uncaught ReferenceError: cy is not defined
+Ensure that Cypress commands are only executed within the test block (it() or beforeEach())
+
 
 
 

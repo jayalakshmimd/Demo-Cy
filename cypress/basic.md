@@ -339,3 +339,6 @@ cy.contains('hello', { matchCase: false }).should('be.visible');
 A)cy.get('input[name="username"]').type('Hello{enter}');
 B)cy.get('input[name="username"]').type('{shift}{tab}');
 C)cy.get('input[name="username"]').type('{ctrl}s'); //Ctrl + S (Save)
+### 27.Screenshot capturing in cy
+cy.screenshot('clicking-on-nav')//Giving name
+cy.screenshot('')//save file with the testcase/it block name

@@ -1,0 +1,109 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2024-10-28T05:06:16.172Z",
+    "end": "2024-10-28T05:06:23.658Z",
+    "duration": 7486,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "1accb9a8-15ee-4b2d-b31d-464298113c41",
+      "title": "",
+      "fullFile": "cypress\\e2e\\practice1.cy.js",
+      "file": "cypress\\e2e\\practice1.cy.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "029d4124-5c96-4d98-a60f-54fcf961e395",
+          "title": "Orange App",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Test Case 01",
+              "fullTitle": "Orange App Test Case 01",
+              "timedOut": null,
+              "duration": 3576,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": "{\n  \"title\": \"cypress-mochawesome-reporter-screenshots\",\n  \"value\": [\n    [\n      \"\\\\practice1.cy.js\\\\Orange App -- Test Case 01 (failed).png\"\n    ]\n  ]\n}",
+              "code": "cy.visit(\"https://opensource-demo.orangehrmlive.com/web/index.php/auth/login\");\ncy.get(\".orangehrm-login-error>div>p\").eq(0).then($ele => {\n  //instead of nth child\n  let userName = $ele.text().split(\" \")[2];\n  localStorage.setItem('authToken', res.body.userId);\n  cy.get(`input[name=\"username\"]`).type(userName);\n});\ncy.get(\".orangehrm-login-error>div>p\").eq(1).then($ele => {\n  let password = $ele.text().split(\" \")[2];\n  cy.get(`input[name=\"password\"]`).type(password);\n});",
+              "err": {
+                "message": "ReferenceError: res is not defined",
+                "estack": "ReferenceError: res is not defined\n    at Context.eval (webpack://demo-cy/./cypress/e2e/practice1.cy.js:6:38)",
+                "diff": null
+              },
+              "uuid": "622df0e7-65df-4760-ae14-079f65de0e63",
+              "parentUUID": "029d4124-5c96-4d98-a60f-54fcf961e395",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "622df0e7-65df-4760-ae14-079f65de0e63"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 3576,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "7.1.3"
+    },
+    "marge": {
+      "options": {
+        "overwrite": false,
+        "html": false,
+        "json": true,
+        "reportDir": "cypress\\reports\\html\\.jsons"
+      },
+      "version": "6.2.0"
+    }
+  }
+}
